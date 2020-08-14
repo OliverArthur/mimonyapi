@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "mimonyapi"
+version = "0.1.0"
+description = ""
+authors = ["Oliver Arthur <contact@oliverarthurnardi.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+uvicorn = "^0.11.3"
+fastapi = "^0.54.1"
+pydantic = "^1.4"
+gunicorn = "^20.0.4"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.770"
+flake8 = "^3.7.9"
+pytest = "^5.4.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
