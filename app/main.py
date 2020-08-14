@@ -1,17 +1,14 @@
 from fastapi import FastAPI
+from app.core import config
 
-from .config import settings
 
 def create_app():
-    api = FastAPI(
-        title=settings.APP_NAME,
-        openapi_url=f'{settings.API_PREFIX}/openapi.json'
-    )
+    api = FastAPI(title='Mimony API')
 
     @api.get('/')
-    async def index():
+    def root():
         return {"status": "ok"}
-    return api
 
+    return api
 
 app = create_app()
