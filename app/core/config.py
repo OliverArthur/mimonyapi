@@ -5,26 +5,26 @@ from dotenv import load_dotenv
 load_dotenv(verbose=True)
 
 # app
-APP_NAME = env.str('APP_NAME', default='Mimony')
+APP_NAME = env.str("APP_NAME", default="Mimony")
 APP_ENV = env.str("APP_ENV", default="development")
 APP_DEBUG = env.bool("APP_DEBUG", default=True)
 
 # api
-API_PREFIX = env.str('API_PREFIX', default='/v1/api')
+API_PREFIX = env.str("API_PREFIX", default="/v1/api")
 
 # server
-SERVER_NAME = env.str('SERVER_NAME', default='0.0.0.0')
-SERVER_HOST = env.str('SERVER_HOST', default='0.0.0.0')
-SERVER_PORT = env.int('SERVER_PORT', default=8000)
+SERVER_NAME = env.str("SERVER_NAME", default="0.0.0.0")
+SERVER_HOST = env.str("SERVER_HOST", default="0.0.0.0")
+SERVER_PORT = env.int("SERVER_PORT", default=8000)
 
 # cors
-CORS_ORIGINS = env.str('CORS_ORIGINS', default='0.0.0.0')
+CORS_ORIGINS = env.str("CORS_ORIGINS", default="0.0.0.0")
 
 # DB
 SQLALCHEMY_DATABASE_URI = env.str("DATABASE_URL", default="sqlite:///./sqlite.db")
 
 # sqlite need special parameters
-if SQLALCHEMY_DATABASE_URI.startswith('sqlite'):
+if SQLALCHEMY_DATABASE_URI.startswith("sqlite"):
     SQLALCHEMY_CONNECT_ARGS = {"check_same_thread": False}
 else:
     SQLALCHEMY_CONNECT_ARGS = {}  # pragma: no cover
